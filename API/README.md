@@ -5,7 +5,7 @@ Open `cmd` or `PowerShell` and enter:
 ```
 docker-compose up
 ```
-in a new terminal window:
+In a new terminal window, to install node_modules:
 ```
 npm ci
 ```
