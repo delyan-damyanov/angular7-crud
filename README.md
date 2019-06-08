@@ -25,8 +25,7 @@ $ npm install
 
 ### Run the app
 
-Open `mongo` folder inside the root directory of the project.
-Then open either `cmd` or `PowerShell`. То run the database:
+Inside `API` folder open either `cmd` or `PowerShell`. То run the database:
 ```
 docker-compose up
 ```
