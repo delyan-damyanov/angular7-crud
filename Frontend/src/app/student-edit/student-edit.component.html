@@ -1,0 +1,82 @@
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+      <a mat-flat-button color="primary" [routerLink]="['/students']"><mat-icon>list</mat-icon></a>
+      <h2>Edit Student Details</h2>
+    </div>
+
+    <mat-card class="example-card">
+      <form [formGroup]="studentForm" (ngSubmit)="onFormSubmit(studentForm.value)">
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Full Name" formControlName="STUDENT_NAME">
+          <mat-error>
+            <span *ngIf="!studentForm.get('STUDENT_NAME').valid && studentForm.get('STUDENT_NAME').touched">Please enter your name</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" formControlName="STUDENT_EMAIL">
+          <mat-error>
+            <span *ngIf="!studentForm.get('STUDENT_EMAIL').valid && studentForm.get('STUDENT_EMAIL').touched">Please enter your email</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput type='number' placeholder="Age" formControlName="STUDENT_AGE">
+          <mat-error>
+            <span *ngIf="!studentForm.get('STUDENT_AGE').valid && studentForm.get('STUDENT_AGE').touched">Please enter your age, must be over 18</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput type="tel" placeholder="Phone Number" formControlName="STUDENT_PHONE_NUMBER">
+          <mat-error>
+            <span *ngIf="!studentForm.get('STUDENT_PHONE_NUMBER').valid && studentForm.get('STUDENT_PHONE_NUMBER').touched">Please enter your phone number</span>
+          </mat-error>
+        </mat-form-field>
+
+        <label id="communication-label">Preferred Way of Communication</label>
+        <mat-radio-group aria-labelledby="communication-label" class="radio-group" formControlName="STUDENT_COMMUNICATION">
+          <mat-radio-button value="Email" class="radio-button">Email</mat-radio-button>
+          <mat-radio-button value="Phone" class="radio-button">Phone</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field>
+          <mat-label>English Level</mat-label>
+          <mat-select formControlName="STUDENT_ENGLISH_LEVEL">
+            <mat-option>None</mat-option>
+            <mat-option value="A1">A1</mat-option>
+            <mat-option value="A2">A2</mat-option>
+            <mat-option value="B1">B1</mat-option>
+            <mat-option value="B2">B2</mat-option>
+            <mat-option value="C1">C1</mat-option>
+            <mat-option value="C2">C2</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="datepicker">
+          <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate" placeholder="Choose a starting date" formControlName="STUDENT_START_DATE">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="skills-presentation">
+          <textarea matInput placeholder="Technical Skills and Courses" formControlName="STUDENT_SKILLS_COURSES"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="skills-presentation">
+          <textarea matInput placeholder="Short Personal Presentation" formControlName="STUDENT_PRESENTATION"></textarea>
+        </mat-form-field>
+
+        <mat-checkbox formControlName="STUDENT_HOME_STUDY">Study from home</mat-checkbox>
+
+        <div class="button-row">
+          <button type="submit" [disabled]="!studentForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+        </div>
+      </form>
+    </mat-card>
+  </div>

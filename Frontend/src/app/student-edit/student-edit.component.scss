@@ -1,0 +1,67 @@
+/* Structure */
+.example-container {
+  position: relative;
+  padding: 5px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-full-width:nth-last-child(n) {
+  margin-bottom: 10px;
+}
+
+.button-row {
+  margin: 10px 0;
+}
+
+.mat-flat-button {
+  margin: 5px;
+}
+
+mat-checkbox {
+  padding-left: 2%;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  color: #989898;
+}
+
+#communication-label {
+  color:#989898;
+}
+
+.radio-button {
+  margin: 5px;
+}
+
+.datepicker {
+  display: block;
+  width: 200px;
+}
+
+.skills-presentation {
+  display: block;
+}
+
+mat-checkbox {
+  padding-left: 0;
+  color: #989898;
+}
+
+h2 {
+  margin-left: 2%;
+  display: inline-block;
+  color: #2F4F4F;
+  vertical-align: middle;
+}

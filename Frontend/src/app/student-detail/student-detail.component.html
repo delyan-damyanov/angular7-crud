@@ -1,0 +1,57 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/students']"><mat-icon>list</mat-icon></a>
+    <h2>Sudent Details</h2>
+  </div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title><h3>{{student.STUDENT_NAME}}</h3></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <dl>
+        <dt>Email:</dt>
+        <dd>{{student.STUDENT_EMAIL}}</dd>
+
+        <dt>Age:</dt>
+        <dd>{{student.STUDENT_AGE}}</dd>
+
+        <dt>Phone Number:</dt>
+        <dd>{{student.STUDENT_PHONE_NUMBER}}</dd>
+
+        <dt>Preferred Way of Communication:</dt>
+        <dd>{{student.STUDENT_COMMUNICATION}}</dd>
+
+        <dt>English Level:</dt>
+        <dd>{{student.STUDENT_ENGLISH_LEVEL}}</dd>
+
+        <dt>Available to Start:</dt>
+        <dd>{{student.STUDENT_START_DATE | date}}</dd>
+
+        <dt>Technical Skills and Courses:</dt>
+        <dd>{{student.STUDENT_SKILLS_COURSES}}</dd>
+
+        <dt>Personal Presentation:</dt>
+        <dd>{{student.STUDENT_PRESENTATION}}</dd>
+
+        <dt>Home Study:</dt>
+        <dd>
+          <span *ngIf="student.STUDENT_HOME_STUDY else noHomeStudy">Yes</span>
+          <ng-template #noHomeStudy>
+            <span>No</span>
+          </ng-template>
+        </dd>
+
+        <dt>Updated At:</dt>
+        <dd>{{student.UPDATED_AT | date}}</dd>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-flat-button color="primary" [routerLink]="['/student-edit', student._id]"><mat-icon>edit</mat-icon></a>
+      <a mat-flat-button color="warn" (click)="openDialog(student._id)"><mat-icon>delete</mat-icon></a>
+    </mat-card-actions>
+  </mat-card>
+</div>
