@@ -23,10 +23,9 @@ $ cd angular7-crud
 $ npm install
 ```
 
-### Run the app
+### Run the API
 
-Open `mongo` folder inside the root directory of the project.
-Then open either `cmd` or `PowerShell`. То run the database:
+Inside `API` folder open either `cmd` or `PowerShell`. То run the database:
 ```
 docker-compose up
 ```
@@ -39,6 +38,9 @@ followed by:
 npm start
 ```
 Should see message `"Connection Successful"`.
+
+### Run the app
+
 Run `ng serve -o` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 ## Built With
