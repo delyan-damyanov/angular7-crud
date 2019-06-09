@@ -43,7 +43,7 @@ Should see message `"Connection Successful"`.
 
 Run `ng serve -o` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-### Built With
+## Built With
 
 * [npm](https://www.npmjs.com/)
 * [Node.js](https://nodejs.org/en/)
