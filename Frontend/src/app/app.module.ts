@@ -26,7 +26,7 @@ import {
   MatFormFieldModule } from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,8 @@ import { ConfirmationDialogComponent } from './components/shared/confirmation-di
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule
   ],
   entryComponents: [
     ConfirmationDialogComponent
