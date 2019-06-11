@@ -33,7 +33,7 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput type="tel" placeholder="Phone Number" formControlName="STUDENT_PHONE_NUMBER">
+          <input matInput placeholder="Phone Number" formControlName="STUDENT_PHONE_NUMBER">
           <mat-error>
             <span *ngIf="!studentForm.get('STUDENT_PHONE_NUMBER').valid && studentForm.get('STUDENT_PHONE_NUMBER').touched">Please enter your phone number</span>
           </mat-error>
